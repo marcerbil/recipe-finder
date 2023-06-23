@@ -1,0 +1,41 @@
+<div class="hero" @fadeInAnimation>
+  <h1>Recipe Finder</h1>
+
+  <p>
+    Got some random ingredients and not sure what to make with them? No problem! Just type them in, hit enter to add
+    them to your list, and we'll show you what tasty dishes you can create. Let's get cooking!
+  </p>
+</div>
+
+<div class="content-wrapper" @fadeInAnimation>
+
+  <form (keydown.enter)="$event.preventDefault()">
+    <div class="form-group">
+      <label for="ingredient"></label>
+
+      <mat-form-field class="input-group">
+        <input matInput autocomplete="off" class="search-field" id="ingredient" type="text" [formControl]="ingredientSearch" placeholder="e.g apples, flour, sugar" (keyup)="onKeyUp($event)">
+        <button matSuffix class="add-button" type="button" (click)="add()">&plus;</button>
+      </mat-form-field>
+
+      <div @fadeInAnimation class="secondary-content">
+        <p *ngIf="ingredients && ingredients.length > 0" class="secondary-text">Your ingredient list:</p>
+
+        <mat-chip-listbox>
+          <mat-chip-option *ngFor="let ingredient of ingredients; let i = index" [removable]="true"
+            (removed)="remove(ingredient)">
+            {{ ingredient }}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip-option>
+        </mat-chip-listbox>
+
+        <button *ngIf="ingredients && ingredients.length > 0" mat-raised-button
+          class="reset-padding reset-margin search-button" aria-label="Find me recipes!" type="submit"
+          (click)="search($event)">
+          Find Recipes
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>

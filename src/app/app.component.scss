@@ -1,0 +1,43 @@
+.main {
+    background-color: #F4F4F4;
+    height: 100%;
+    max-height: calc(100vh - 128px);
+    overflow-y: scroll;
+}
+
+.navigation, 
+.footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.nav-spacer {
+    flex: 1 1 auto;
+}
+
+.layout-container {
+    display: flex;
+    justify-content: center;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.footer {
+    span {
+        margin: 0 auto;
+    }
+}

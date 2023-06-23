@@ -1,0 +1,54 @@
+<div class="breadcrumb">
+    <a routerLink="/">
+        < Back to search</a>
+</div>
+
+<div class="recipe-detail" @fadeInAnimation>
+    <div>
+        <div class="image-wrapper">
+            <img src="{{ recipeDetail?.image }}" alt="{{ recipeDetail?.title }}">
+        </div>
+
+        <h1>{{ recipeDetail?.title }}</h1>
+
+        <div class="recipe-diet">
+            <ul>
+                <ng-container *ngFor="let diet of recipeDetailDietary">
+                    <li *ngIf="diet.value">
+                        <mat-icon>task_alt</mat-icon>
+                        &nbsp;{{ diet.name | normalise }}
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div class="recipe-meta">
+            <ul>
+                <li>
+                    <mat-icon>restaurant</mat-icon>
+                    servings: {{ recipeDetail?.servings }}
+                </li>
+                <li>
+                    <mat-icon>schedule</mat-icon>
+                    total time: {{ recipeDetail?.readyInMinutes }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="recipe-ingredients">
+            <ul *ngFor="let ingredient of recipeDetail?.extendedIngredients">
+                <li>
+                    <span>{{ ingredient.amount }} {{ ingredient.unitShort }}</span> {{ ingredient.name }}
+                </li>
+            </ul>
+        </div>
+
+        <article class="recipe-instructions" *ngIf="recipeDetail?.instructions !== ''">
+            <h2>Instructions</h2>
+
+            <p>{{ recipeDetail?.instructions }}</p>
+        </article>
+    </div>
+</div>

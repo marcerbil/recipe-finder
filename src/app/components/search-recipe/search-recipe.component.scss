@@ -1,0 +1,65 @@
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.secondary-content {
+    opacity: 1;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+.search-field {
+    display: block;
+    width: 90%; // weirdly 100% makes the input field go out of the container
+    margin: 0 auto;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border: 1px solid #ececec;
+    transition: all 500ms ease-in-out;
+}
+
+.search-button {
+    margin: 0 auto;
+    display: flex;
+    border-radius: 5px;
+    padding: 32px 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: #977fe7;
+    color: #fff;    
+}
+
+.add-button {
+    border-radius: 0 5px 2px 0;
+    border: none;
+    height: 100%;
+    width: 72px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.hero {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 2rem;
+        line-height: 1.6;
+    }
+    
+    margin: 6rem 0;
+    text-align: center;
+}
+
+.secondary-text {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}

@@ -1,0 +1,21 @@
+<div class="breadcrumb">
+    <a routerLink="/">< Back to search</a>
+</div>
+
+<ul class="recipe-list" [@listAnimation]="recipes">
+    <li *ngFor="let recipe of recipes" 
+        (click)="selectRecipe(recipe.id)" 
+        class="recipe-list-item">
+
+        <div class="image-wrapper">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        </div>
+
+        <div class="content">
+            <h2>{{ recipe.title }}</h2>
+            <div class="recipe-list-item-chevron"> 
+                <mat-icon aria-hidden="false" aria-label="View recipe" fontIcon="chevron-left"></mat-icon>
+            </div>
+        </div>
+    </li>
+</ul>
